@@ -51,8 +51,11 @@ public class HttpServer {
 				System.out.println("Recibí: " + inputLine);
 				if (inputLine.startsWith("GET")) {
 					path = inputLine.split(" ")[1];	
+					
 					for(String handlerPath:handlers.keySet()) {
+						System.out.println(path+"--"+handlerPath);
 						if(path.startsWith(handlerPath)) {
+							
 							if(path.contains(".js")) {
 								String resource= path.split("/")[2];
 								outputLine = ObtainResources.outResource(resource, "js");
