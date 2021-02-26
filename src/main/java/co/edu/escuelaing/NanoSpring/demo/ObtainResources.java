@@ -13,6 +13,12 @@ import javax.imageio.ImageIO;
 
 public class ObtainResources {
 	
+	/**
+	 * this method is used to bring the resource
+	 * @param resource name of resource
+	 * @param term type of resource
+	 * @return
+	 */
 	public static String outResource(String resource, String term) {
 		String outText = "";
 		try {
@@ -32,6 +38,11 @@ public class ObtainResources {
 				+ outText;
 	}
 	
+	/**
+	 * this method is used to send resources of images
+	 * @param resource name of resource
+	 * @param entrada 
+	 */
 	public static void outResourceImage(String resource, OutputStream entrada) {
 		  try {
 	            BufferedImage image = ImageIO.read(new File(System.getProperty("user.dir")+ "/src/main/java/co/edu/escuelaing/resources/" + resource));

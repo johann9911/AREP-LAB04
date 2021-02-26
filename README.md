@@ -17,7 +17,7 @@ mvn test
 ```
 - Para generar la documentación
 ```
-mcn javadoc:javadoc o mvn javadoc:jar (generar jar)
+mvn javadoc:javadoc o mvn javadoc:jar (generar jar)
 ```
 
 ## Ejecutar Programa

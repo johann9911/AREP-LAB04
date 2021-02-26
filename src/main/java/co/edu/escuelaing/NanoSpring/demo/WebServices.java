@@ -4,6 +4,12 @@ import co.edu.escuelaing.NanoSpring.PathVariable;
 import co.edu.escuelaing.NanoSpring.RequestMapping;
 
 public class WebServices {
+	/**
+	 * this method is used to multiply two numbers 
+	 * @param num1 number one
+	 * @param num2 number two
+	 * @return send all resource
+	 */
 	@RequestMapping("/sum")
 	public static String sum(@PathVariable int num1,@PathVariable int num2) {
 		String data = ObtainResources.outResource("sum.html", "html");

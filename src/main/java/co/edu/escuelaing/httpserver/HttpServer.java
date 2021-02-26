@@ -98,7 +98,12 @@ public class HttpServer {
 		}
 		return 35000; // returns default port if heroku-port isn't set(i.e. on localhost)
 	}
-
+	
+	/**
+	 * This method is used to assign a path to a class
+	 * @param nanoSpringApplication for moment assign class nanoSpringApplication
+	 * @param string the path
+	 */
 	public void registerHandler(NanoSpringApplication nanoSpringApplication, String string) {
 		
 		handlers.put(string,nanoSpringApplication);

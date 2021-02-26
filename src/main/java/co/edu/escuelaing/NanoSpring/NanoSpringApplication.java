@@ -17,7 +17,12 @@ public class NanoSpringApplication{
 	private NanoSpringApplication() {
 
 	}
-
+	/**
+	 * this method is used to run and load all components
+	 * @param args list of class
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 */
 	public static void run(String[] args) throws SecurityException, ClassNotFoundException {
 		if (!_instance.componentesLoaded) {
 			_instance.loadComponents(args);
@@ -27,6 +32,9 @@ public class NanoSpringApplication{
 
 	}
 
+	/**
+	 * this method begin to server
+	 */
 	private void startServer() {
 		HttpServer hserver = new HttpServer();
 		hserver.registerHandler(this, "/calculator");
@@ -38,6 +46,12 @@ public class NanoSpringApplication{
 		}
 	}
 
+	/**
+	 * this method is used to load components and save with your key 
+	 * @param components list of components
+	 * @throws SecurityException
+	 * @throws ClassNotFoundException
+	 */
 	private void loadComponents(String[] components) throws SecurityException, ClassNotFoundException {
 
 		for (String classPath : components) {
@@ -51,6 +65,11 @@ public class NanoSpringApplication{
 
 	}
 	
+	/**
+	 * this method is used to separate path and parameters, and invoke it
+	 * @param path
+	 * @return
+	 */
 	public String handle(String path) {
 		String retornar = "no component";
 		String params = "";
@@ -76,7 +95,11 @@ public class NanoSpringApplication{
 		return retornar;
 	}
 	
-
+	/**
+	 * this method is used to invoke a method
+	 * @param staticMethod method of class
+	 * @return
+	 */
 	public static String invoke(Method staticMethod) {
 		String res="";
 		try {
@@ -89,6 +112,12 @@ public class NanoSpringApplication{
 		return res;
 	}
 	
+	/**
+	 *  this method is used to invoke a method
+	 * @param staticMethod method of class
+	 * @param params parameters of method
+	 * @return
+	 */
 	public static String invokeWithParams(Method staticMethod, String params) {
 		String[] val = params.split("&");
 		
